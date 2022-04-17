@@ -1,0 +1,215 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.video-display {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+video {
+    width: 400px;
+    height: 300px;
+    object-fit: cover;
+    margin: 1rem;
+}
+
+
+p {
+    
+    font-family: 'Secular One', sans-serif;
+}
+
+
+
+.navbar{
+    font-family: 'Secular One', sans-serif;
+}
+
+.main {
+    display: flex;
+    height: 100vh;
+}
+
+.left {
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    background: linear-gradient(45deg,
+    #141e30,
+    #243b55);
+
+}
+
+.left .navbar p{
+    color: white;
+    margin-top: auto;
+}
+
+.video-section {
+    flex-grow: 0.8;
+    background: linear-gradient(45deg,
+    #141e30,
+    #243b55);
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    display: flex;
+}
+
+h4{
+    font-family: 'Secular One', sans-serif;
+}
+
+.chat-section {
+    flex: 0.35;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background: linear-gradient(45deg,
+    #000000,
+    #434343);
+    border-left: solid;
+    border-left-color: dimgrey;
+}
+
+
+.chat-heading {
+    padding-top: 12px;
+    text-align: center;
+    border-left: 5px;
+    border-right: 5px;
+    color: white;
+}
+
+
+.main-chat-section {
+    flex-grow: 1;
+    overflow-y: auto;
+    border: 2px 5px 0 5px;
+    color: white;
+}
+
+span{
+    font-family: 'Secular One', sans-serif;
+}
+
+.chat-input {
+    padding: 22px 12px;
+    display: flex;
+    border-bottom: 5px;
+    border-color: #040303;
+    border-style: solid;
+
+}
+
+.message-input {
+    border: none;
+    flex-grow: 1;
+    background-color: transparent;
+    outline: none;
+    color: white;
+}
+
+
+.intro {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(45deg,
+            #141e30,
+            #243b55);
+    height: 100vh
+}
+
+.intro-heading {
+    color: white;
+    font-family: 'Secular One', sans-serif;
+}
+
+form>button {
+    margin: 1rem;
+}
+
+.join-room {
+    color: white;
+    margin-bottom: 1rem;
+    font-family: 'Secular One', sans-serif;
+}
+
+.form-group>input {
+    margin-bottom: 1.5rem;
+}
+
+.controls {
+    display: flex;
+    /* padding-top: 1.7rem; */
+    background-color: #F58840;
+    justify-content: space-around;
+}
+
+.controls-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.controls-section :hover{
+    border-radius: 30px;
+    background-color: #DE834D;
+}
+
+.controls_button {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 14px;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-bottom: 19px;
+    min-width: 80px;
+    cursor: pointer;
+}
+
+.function-button {
+    background-color: transparent;
+    border: none;
+    margin: 0;
+    padding: 0;
+    outline: none;
+}
+
+.removeChat {
+    display: none;
+}
+
+@media (max-width: 772px) {
+    .main {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .left {
+        flex: auto;
+    }
+
+    .chat-section {
+        flex: auto;
+    }
+
+    .controls_button{
+        text-align: center;
+    }
+}
+
+@media (max-width : 842px){
+    video{
+        width: 300px;
+        height:200px
+    }
+}

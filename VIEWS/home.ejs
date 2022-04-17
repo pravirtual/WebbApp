@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VidMeet</title>
+    <link rel="icon" href="images/logo.png">
+     <script>
+         const room_ID = '<%= roomId %>';
+     </script>
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+      <script defer  src="https://unpkg.com/peerjs@1.3.1/dist/peerjs.min.js" ></script>
+      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+     <!-- The following statements connects frontend to all the socket code from the server we have set up.  -->
+     <script src="/socket.io/socket.io.js" defer></script>
+     <link href="https://fonts.googleapis.com/css2?family=Secular+One&display=swap" rel="stylesheet">
+     <link rel="stylesheet" href="styles.css">
+     <script src="https://kit.fontawesome.com/c939d0e917.js"></script>
+     <!-- <script src="index.js" defer></script> -->
+    </head>
+<body>
+    <div class="main">
+        <div class="left">
+        <nav class="navbar  navbar-dark ">
+                <a class="navbar-brand" href="#"> <span><img src="images/logo.png" height="30rem" alt=""></span>VidMeet</a>
+                <p>
+                    Room ID : <%= roomId %>
+                </p>
+              </nav>
+            <div class="video-section">
+                <div class="video-display row">
+                   
+                </div>
+            </div>
+            <div class="controls">
+                <div class="controls-section">
+                    <div onclick="muteUnmute()"  style="color: white;" class="controls_button mute_button">
+                        <i class="fas fa-microphone" style="color: white;"></i>
+                        <span style="color: white;">Mute</span>
+                     </div>
+                     <div onclick="playStop()" style="color: white;" class="controls_button video_button" >
+                        <i class="fas fa-video" style="color: white"></i>
+                        <span style="color: white;">Stop Video</span>
+                     </div>
+                </div>
+                <div class="controls-section">
+                    <div class="controls_button">
+                        <form action="/exit" method="POST">
+                            <button class="exit-button function-button" type="submit"><i  style="color: white;" class="fas fa-phone-slash"></i></button>
+                        </form>
+                        <span class="leave_meeting" style="color: white;">Leave Meeting</span>
+                    </div>
+                 </div> 
+                <div class="controls-section">
+                    <div class="controls_button chat-controls">
+                        <button class = "chat-button function-button"> <i class="fas fa-comment-alt function-button" style="color: white;"></i></button>
+                       <span style="color: white;">Chat</span>
+                     </div>
+                </div>
+                
+            </div>
+        </div>
+        
+        <div class="chat-section removeChat">
+            <div class="chat-heading">
+              <h4 style="color: white">Chat</h4>
+            </div>
+  
+            <div class="main-chat-section">
+               <ul>
+
+               </ul>
+            </div>
+
+            <div class="chat-input">
+                <input type="text" class="message-input" placeholder="type messages here">
+            </div>
+
+        </div>
+
+    </div>
+    
+    <script src="index.js" defer></script>
+</body>
+</html>
